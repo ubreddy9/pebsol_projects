@@ -1,0 +1,46 @@
+[
+  {
+    "id": "team-1",
+    "name": "K. Srinivas Rao",
+    "role": "Managing Director & Founder",
+    "department": "Executive Leadership",
+    "experience": "16+ Years",
+    "bio": "Founded PEBSOL in 2009 in Balanagar. Led strategic expansion into Solar MMS in 2014 and the 80,000 sq.ft Medchal plant, scaling company delivery to 1.2M sq.ft PEB and 700 MW solar capacity annually.",
+    "email": "srinivas@pebsol.in",
+    "linkedin": "https://linkedin.com",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "team-2",
+    "name": "M. Venkat Reddy",
+    "role": "VP & Head of Solar Structures",
+    "department": "Solar Module Mounting Solutions",
+    "experience": "14+ Years",
+    "bio": "Pioneered PEBSOL's Solar Module Mounting Structures (MMS) portfolio. Has engineered over 2.5 GW of utility-scale ground-mount, tracker, and industrial rooftop solar structures with 180 km/h wind resistance.",
+    "email": "venkat.reddy@pebsol.in",
+    "linkedin": "https://linkedin.com",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "team-3",
+    "name": "Archana Nair",
+    "role": "Chief PEB Structural Architect",
+    "department": "Engineering & Tekla Detailing",
+    "experience": "12+ Years",
+    "bio": "Specialist in fast-track Pre-Engineered Building structural design, clear-span hangars, and light-gauge steel framing. Spearheaded the delivery of Azad Engineering's 65,000 sq.ft facility in record 48 days.",
+    "email": "archana.nair@pebsol.in",
+    "linkedin": "https://linkedin.com",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "team-4",
+    "name": "Rajeshwar Goud",
+    "role": "Head of Manufacturing & Quality Assurance",
+    "department": "Medchal Plant Operations",
+    "experience": "15+ Years",
+    "bio": "Oversees the state-of-the-art 80,000 sq.ft manufacturing facility in Medchal. Manages automated welding lines, continuous roll-forming purlin lines, and stringent ISO 9001:2015 quality standards.",
+    "email": "rajeshwar@pebsol.in",
+    "linkedin": "https://linkedin.com",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800"
+  }
+]

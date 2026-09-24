@@ -1,0 +1,41 @@
+[
+  {
+    "id": "inq-1790170242278",
+    "name": "Mahesh Patil",
+    "company": "Patil Warehousing",
+    "email": "mahesh@patil.com",
+    "phone": "+91 99999 88888",
+    "projectType": "Pre-Engineered Warehouse",
+    "approxArea": "80,000 sq.ft",
+    "location": "Pune",
+    "message": "Urgent quotation required.",
+    "status": "New",
+    "date": "2026-09-23T13:30:42.278Z"
+  },
+  {
+    "id": "inq-1790169315642",
+    "name": "Mahesh Patil",
+    "company": "Patil Warehousing",
+    "email": "mahesh@patil.com",
+    "phone": "+91 99999 88888",
+    "projectType": "Pre-Engineered Warehouse",
+    "approxArea": "80,000 sq.ft",
+    "location": "Pune",
+    "message": "Urgent quotation required.",
+    "status": "New",
+    "date": "2026-09-23T13:15:15.642Z"
+  },
+  {
+    "id": "inq-1790168433574",
+    "name": "Mahesh Patil",
+    "company": "Patil Warehousing",
+    "email": "mahesh@patil.com",
+    "phone": "+91 99999 88888",
+    "projectType": "Pre-Engineered Warehouse",
+    "approxArea": "80,000 sq.ft",
+    "location": "Pune",
+    "message": "Urgent quotation required.",
+    "status": "New",
+    "date": "2026-09-23T13:00:33.574Z"
+  }
+]
