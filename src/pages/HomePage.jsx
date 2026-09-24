@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useData } from '../context/DataContext';
+import { ClientsSection } from '../components/ClientsSection';
 import { 
   Building2, 
   Sun, 
@@ -27,21 +28,21 @@ export const HomePage = () => {
       title: "Engineering Progress. Empowering Growth.",
       subtitle: "Prefab. Solar. Infra. Delivered with Precision.",
       desc: "Complete end-to-end solutions under one roof. From structural Tekla design and precision fabrication to on-site commissioning.",
-      image: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1920",
+      image: settings?.media?.heroSlide1 || "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1920",
       tag: "PREFAB & SOLAR INFRASTRUCTURE"
     },
     {
       title: "Pre-Engineered & Prefabricated Buildings",
       subtitle: "Rapid, Reliable, and Cost-Effective Industrial Construction",
       desc: "Executing over 1.2 million sq.ft annually. Column-free clear spans, automated welding, and record project handovers.",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1920",
+      image: settings?.media?.heroSlide2 || "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1920",
       tag: "PEB & INDUSTRIAL PREFAB"
     },
     {
       title: "Solar Module Mounting Solutions (MMS)",
       subtitle: "700 MW Annual Production Capacity • 175 km/h Wind Resilience",
       desc: "Cutting-edge ground mount, industrial rooftop, and solar carport structures engineered for maximum power generation.",
-      image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1920",
+      image: settings?.media?.heroSlide3 || "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1920",
       tag: "RENEWABLE SOLAR ENERGY"
     }
   ];
@@ -258,7 +259,7 @@ export const HomePage = () => {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200">
                 <img
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200"
+                  src={settings?.media?.aboutPlant || "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200"}
                   alt="PEBSOL Medchal Facility"
                   className="w-full h-[440px] object-cover"
                 />
@@ -476,44 +477,8 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* Real Client Testimonials (from pebsol.in) */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-xl mx-auto mb-16 space-y-2">
-            <span className="text-emerald-700 font-bold uppercase tracking-wider text-xs bg-emerald-100 px-3 py-1 rounded-full">
-              Client Feedback
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f2b48] font-['Barlow'] uppercase">
-              Our Happy Clients
-            </h2>
-            <p className="text-slate-600 text-sm">
-              Hear directly from top enterprise partners who trust PEBSOL with their critical infrastructure.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.slice(0, 3).map((test, index) => (
-              <div 
-                key={index}
-                className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4"
-              >
-                <div className="space-y-3">
-                  <Quote className="w-8 h-8 text-emerald-600 opacity-60" />
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
-                    "{test.quote}"
-                  </p>
-                </div>
-                <div className="pt-3 border-t border-slate-200">
-                  <h4 className="font-bold text-slate-900 text-sm font-['Barlow']">{test.client}</h4>
-                  <p className="text-xs text-emerald-700 font-semibold">{test.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+      {/* Dedicated Our Clients & Client Testimonials Section (from pebsol.in) */}
+      <ClientsSection showTestimonials={true} />
 
       {/* Team Preview Section (4 members) */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">

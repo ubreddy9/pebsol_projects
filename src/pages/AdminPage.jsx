@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useData } from '../context/DataContext';
 import { ImageUploader } from '../components/ImageUploader';
 import { isSupabaseConfigured } from '../lib/supabaseClient';
@@ -24,7 +24,8 @@ import {
   MapPin, 
   Calendar, 
   Sun,
-  Zap 
+  Zap,
+  Image as ImageIcon 
 } from 'lucide-react';
 
 export const AdminPage = () => {
@@ -45,7 +46,6 @@ export const AdminPage = () => {
     deleteInquiry,
     settings,
     updateSettings,
-    resetDemoData,
     navigateTo
   } = useData();
 
@@ -89,12 +89,51 @@ export const AdminPage = () => {
 
   // Settings form state
   const [settingsFormData, setSettingsFormData] = useState({
-    companyName: settings.companyName || 'PEBSOL',
-    phone: settings.phone || '+91 99632 06999',
-    email: settings.email || 'info@pebsol.in',
+    companyName: settings.companyName || 'PebSol Projects',
+    phone: settings.phone || '+91 98858 61555',
+    email: settings.email || 'info@pebsolprojects.com',
     address: settings.address || '',
     hours: settings.hours || 'Mon to Sat: 9:00 AM – 6:30 PM'
   });
+
+  // Media & Banners state (Hero, About, Services)
+  const [mediaFormData, setMediaFormData] = useState({
+    heroSlide1: settings?.media?.heroSlide1 || "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1920",
+    heroSlide2: settings?.media?.heroSlide2 || "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1920",
+    heroSlide3: settings?.media?.heroSlide3 || "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1920",
+    aboutPlant: settings?.media?.aboutPlant || "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
+    aboutLegacy: settings?.media?.aboutLegacy || "https://images.unsplash.com/photo-1541888946425-d0fbb18615f3?auto=format&fit=crop&q=80&w=1200",
+    servicePeb: settings?.media?.servicePeb || "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
+    serviceSolarGround: settings?.media?.serviceSolarGround || "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1200",
+    serviceSolarRooftop: settings?.media?.serviceSolarRooftop || "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200",
+    serviceCommercial: settings?.media?.serviceCommercial || "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1200",
+    serviceCarport: settings?.media?.serviceCarport || "https://images.unsplash.com/photo-1558441719-aa34bef57312?auto=format&fit=crop&q=80&w=1200",
+    serviceWarehouse: settings?.media?.serviceWarehouse || "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200"
+  });
+
+  // Sync state if settings update
+  useEffect(() => {
+    if (settings) {
+      setSettingsFormData({
+        companyName: settings.companyName || 'PebSol Projects',
+        phone: settings.phone || '+91 98858 61555',
+        email: settings.email || 'info@pebsolprojects.com',
+        address: settings.address || '',
+        hours: settings.hours || 'Mon to Sat: 9:00 AM – 6:30 PM'
+      });
+      if (settings.media) {
+        setMediaFormData(prev => ({ ...prev, ...settings.media }));
+      }
+    }
+  }, [settings]);
+
+  const handleSaveMedia = async (e) => {
+    if (e) e.preventDefault();
+    await updateSettings({
+      ...settings,
+      media: mediaFormData
+    });
+  };
 
   // Project search & filter in admin
   const [adminProjectSearch, setAdminProjectSearch] = useState('');
@@ -280,9 +319,6 @@ export const AdminPage = () => {
                   className="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white"
                 />
               </div>
-              <p className="text-[11px] text-slate-400 mt-1">
-                Default password: <span className="font-mono text-slate-700 font-bold">pebsol2025</span> or <span className="font-mono text-slate-700 font-bold">admin123</span>
-              </p>
             </div>
 
             <button
@@ -414,6 +450,22 @@ export const AdminPage = () => {
           </div>
 
           <div 
+            onClick={() => setActiveTab('media')}
+            className={`p-4 rounded-xl border cursor-pointer transition-all ${
+              activeTab === 'media' ? 'bg-white border-emerald-500 ring-2 ring-emerald-500/20 shadow-sm' : 'bg-white border-slate-200 hover:border-slate-300'
+            }`}
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-slate-500 uppercase">Site Photos</span>
+              <ImageIcon className="w-4 h-4 text-emerald-600" />
+            </div>
+            <div className="text-3xl font-black text-[#0f2b48] font-['Barlow'] mt-1">
+              11
+            </div>
+            <p className="text-[11px] text-slate-400 mt-1">Hero, Plant & Services</p>
+          </div>
+
+          <div 
             onClick={() => setActiveTab('settings')}
             className={`p-4 rounded-xl border cursor-pointer transition-all ${
               activeTab === 'settings' ? 'bg-white border-emerald-500 ring-2 ring-emerald-500/20 shadow-sm' : 'bg-white border-slate-200 hover:border-slate-300'
@@ -426,7 +478,7 @@ export const AdminPage = () => {
             <div className="text-3xl font-black text-[#0f2b48] font-['Barlow'] mt-1">
               Active
             </div>
-            <p className="text-[11px] text-slate-400 mt-1">Profile & Demo Reset</p>
+            <p className="text-[11px] text-slate-400 mt-1">Profile & Cloud Sync</p>
           </div>
 
         </div>
@@ -436,7 +488,7 @@ export const AdminPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         
         {/* Navigation Tabs */}
-        <div className="flex items-center space-x-2 border-b border-slate-200 pb-3 mb-6">
+        <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-3 mb-6">
           <button
             onClick={() => setActiveTab('projects')}
             className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center space-x-2 ${
@@ -455,6 +507,16 @@ export const AdminPage = () => {
           >
             <Users className="w-4 h-4 text-emerald-400" />
             <span>Manage Team Members ({team.length})</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('media')}
+            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center space-x-2 ${
+              activeTab === 'media' ? 'bg-[#0f2b48] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+            }`}
+          >
+            <ImageIcon className="w-4 h-4 text-emerald-400" />
+            <span>Website Photos & Banners</span>
           </button>
 
           <button
@@ -905,31 +967,218 @@ export const AdminPage = () => {
               </div>
             </div>
 
-            {/* Reset Defaults */}
-            <div className="bg-red-50 p-6 rounded-xl border border-red-200 space-y-3">
-              <div className="flex items-center space-x-2 text-red-800">
-                <RotateCcw className="w-5 h-5 text-red-600" />
-                <h4 className="font-bold text-base font-['Barlow'] uppercase">
-                  Reset Demo Data to Initial Defaults
-                </h4>
+          </div>
+        )}
+
+        {/* TAB 5: WEBSITE MEDIA & BANNERS */}
+        {activeTab === 'media' && (
+          <div className="space-y-8">
+            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h3 className="text-xl font-black text-slate-900 font-['Barlow'] uppercase">
+                  Website Photos & Banners Management
+                </h3>
+                <p className="text-xs text-slate-500 mt-1">
+                  Change any photo across the live website (Hero slides, About section, Services) by uploading from your device storage or providing a URL.
+                </p>
               </div>
-              <p className="text-xs text-red-700 leading-relaxed">
-                Restore the default PEBSOL demo configuration (4 initial team members, default Solar & PEB projects).
-              </p>
               <button
                 type="button"
-                onClick={() => {
-                  if (window.confirm('Reset all site data back to default template values?')) {
-                    resetDemoData();
-                  }
-                }}
-                className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg text-xs transition-all flex items-center space-x-1.5 shadow-sm"
+                onClick={handleSaveMedia}
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm shadow-sm transition-all flex items-center space-x-2 shrink-0 self-start sm:self-auto"
               >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span>Restore Factory Demo Data</span>
+                <Save className="w-4 h-4" />
+                <span>Save All Photo Changes</span>
               </button>
             </div>
 
+            {/* SECTION 1: HERO SECTION SLIDES */}
+            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
+              <div className="border-b border-slate-100 pb-3">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  Home Page Carousel
+                </span>
+                <h4 className="text-base font-bold text-[#0f2b48] font-['Barlow'] uppercase mt-1">
+                  Hero Section Background Slides
+                </h4>
+                <p className="text-xs text-slate-500">
+                  These large rotating banners are prominently displayed at the very top of your home page.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">Slide 1: Solar & Prefab Infrastructure</span>
+                  <p className="text-[11px] text-slate-400">"Engineering Progress. Empowering Growth."</p>
+                  <ImageUploader
+                    value={mediaFormData.heroSlide1}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, heroSlide1: url })}
+                    label="Slide 1 Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">Slide 2: PEB & Prefab Buildings</span>
+                  <p className="text-[11px] text-slate-400">"Pre-Engineered & Prefabricated Buildings"</p>
+                  <ImageUploader
+                    value={mediaFormData.heroSlide2}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, heroSlide2: url })}
+                    label="Slide 2 Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">Slide 3: Renewable Solar Energy</span>
+                  <p className="text-[11px] text-slate-400">"Solar Module Mounting Solutions"</p>
+                  <ImageUploader
+                    value={mediaFormData.heroSlide3}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, heroSlide3: url })}
+                    label="Slide 3 Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 2: ABOUT US & MANUFACTURING PLANT */}
+            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
+              <div className="border-b border-slate-100 pb-3">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  Facility & Story
+                </span>
+                <h4 className="text-base font-bold text-[#0f2b48] font-['Barlow'] uppercase mt-1">
+                  About Us & Plant Facility Photos
+                </h4>
+                <p className="text-xs text-slate-500">
+                  Featured on the home page facility showcase and the dedicated About Us page.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">Medchal Manufacturing Unit Photo</span>
+                  <p className="text-[11px] text-slate-400">Home page "End-to-End Solutions" plant highlight (80,000 sq.ft unit)</p>
+                  <ImageUploader
+                    value={mediaFormData.aboutPlant}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, aboutPlant: url })}
+                    label="Medchal Plant Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">Engineering Heritage & Steel Fabrication</span>
+                  <p className="text-[11px] text-slate-400">About page main story and structural engineering banner</p>
+                  <ImageUploader
+                    value={mediaFormData.aboutLegacy}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, aboutLegacy: url })}
+                    label="Engineering Story Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 3: SERVICES & OFFERINGS */}
+            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
+              <div className="border-b border-slate-100 pb-3">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  Services Page
+                </span>
+                <h4 className="text-base font-bold text-[#0f2b48] font-['Barlow'] uppercase mt-1">
+                  Core Service Offering Photos
+                </h4>
+                <p className="text-xs text-slate-500">
+                  These photos appear in the detailed service breakdown cards on the Services page.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">1. PEB & Prefab Buildings</span>
+                  <ImageUploader
+                    value={mediaFormData.servicePeb}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, servicePeb: url })}
+                    label="PEB Service Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">2. Ground-Mount Solar MMS</span>
+                  <ImageUploader
+                    value={mediaFormData.serviceSolarGround}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, serviceSolarGround: url })}
+                    label="Ground Mount Solar Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">3. Industrial Rooftop Solar</span>
+                  <ImageUploader
+                    value={mediaFormData.serviceSolarRooftop}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, serviceSolarRooftop: url })}
+                    label="Rooftop Solar Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">4. Commercial Convention Centers</span>
+                  <ImageUploader
+                    value={mediaFormData.serviceCommercial}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, serviceCommercial: url })}
+                    label="Commercial Steel Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">5. Solar Carports & EV Canopies</span>
+                  <ImageUploader
+                    value={mediaFormData.serviceCarport}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, serviceCarport: url })}
+                    label="Solar Carport Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-slate-700 block">6. Logistics Hubs & Warehouses</span>
+                  <ImageUploader
+                    value={mediaFormData.serviceWarehouse}
+                    onChange={(url) => setMediaFormData({ ...mediaFormData, serviceWarehouse: url })}
+                    label="Warehouse Photo"
+                    aspectRatio="video"
+                    presets={imagePresets}
+                  />
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-slate-100 flex justify-end">
+                <button
+                  type="button"
+                  onClick={handleSaveMedia}
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm shadow-sm transition-all flex items-center space-x-2"
+                >
+                  <Save className="w-4 h-4" />
+                  <span>Save All Photo Changes</span>
+                </button>
+              </div>
+            </div>
           </div>
         )}
 

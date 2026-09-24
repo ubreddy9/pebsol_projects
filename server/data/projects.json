@@ -4,72 +4,172 @@
     "title": "Azad Engineering Aerospace Manufacturing Facility",
     "category": "PEB & Prefab Buildings",
     "client": "Azad Engineering",
-    "location": "Hyderabad, Telangana",
+    "location": "Jeedimetla, Hyderabad",
     "area": "65,000 sq.ft",
     "tonnage": "620 MT",
     "year": "2023",
     "status": "Completed",
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
-    "description": "Turnkey delivery of a 65,000 sq.ft precision aerospace manufacturing facility executed from civil foundation to complete PEB erection in a record 48 days, complying with strict aerospace tolerances.",
+    "image": "https://pebsol.in/wp-content/uploads/2025/07/15-2.jpg",
+    "description": "An end-to-end turnkey project, including civil works, executed in just 48 days while adhering to strict company norms. A true showcase of PEBSOL’s speed and structural precision for aerospace manufacturing.",
     "highlights": [
-      "Flawlessly executed and delivered in just 48 days",
-      "Heavy overhead crane runway beams integrated into PEB frame",
-      "Standing seam Galvalume roof with 25-year leak-proof warranty",
-      "Rigid moment-resisting frame designed for zero micro-vibrations"
+      "Complete turnkey solution from foundation to finish delivered in just 48 days",
+      "Expedited timeline with zero compromise on precision and structural quality",
+      "Adherence to strict industrial safety standards and aerospace tolerances",
+      "Custom engineering solutions for specialized heavy manufacturing machinery"
     ]
   },
   {
     "id": "proj-2",
+    "title": "Shri Raj Udyog Integrated Steel Manufacturing Plant",
+    "category": "PEB & Prefab Buildings",
+    "client": "Shri Raj Udyog Pvt Ltd",
+    "location": "Cherkurda, Hyderabad",
+    "area": "250,000 sq.ft",
+    "tonnage": "2,100 MT",
+    "year": "2024",
+    "status": "Completed",
+    "featured": true,
+    "image": "https://pebsol.in/wp-content/uploads/2025/07/SRI-RAJ-IRON-STEEL-PRODUCTS-PRIVATE-LIMITEDjpg-scaled.jpg",
+    "description": "A massive, fully integrated steel manufacturing facility spread over 2.5 lakh sq. ft. Built to accommodate high-capacity industrial cranes, heavy machinery, and seamless production logistics.",
+    "highlights": [
+      "Engineered for heavy industrial use, including provisions for high-capacity cranes",
+      "Designed for future scalability with modular expansion options across 2.5L sq.ft",
+      "Integrated high-precision fabrication to support continuous steel processing",
+      "Efficient project management ensured on-time delivery despite massive industrial scale"
+    ]
+  },
+  {
+    "id": "proj-3",
+    "title": "Geekay Wires Heavy Industrial Wire Plant",
+    "category": "PEB & Prefab Buildings",
+    "client": "Geekay Wires Limited",
+    "location": "Wadiram, Telangana",
+    "area": "95,000 sq.ft",
+    "tonnage": "840 MT",
+    "year": "2024",
+    "status": "Completed",
+    "featured": true,
+    "image": "https://pebsol.in/wp-content/uploads/2025/07/GEEKAY-WIRES-LIMITED-15-scaled.jpg",
+    "description": "A high-precision turnkey industrial structure delivered for one of India’s leading manufacturers of galvanized steel wires, with integrated crane gantry beams and material handling.",
+    "highlights": [
+      "Engineered to support specialized machinery for galvanized steel wire production",
+      "Designed to handle dynamic and static crane loads typical of steel wire manufacturing",
+      "Included civil works, structural fabrication, and rapid on-site installation",
+      "Smart layout design for streamlined production flow and future scalability"
+    ]
+  },
+  {
+    "id": "proj-4",
+    "title": "Reliance Retail Commercial Hypermarket",
+    "category": "Commercial & Convention Centers",
+    "client": "Reliance Retail",
+    "location": "Adjacent to Tirupati Temple, Tirupati",
+    "area": "45,000 sq.ft",
+    "tonnage": "380 MT",
+    "year": "2024",
+    "status": "Completed",
+    "featured": true,
+    "image": "https://pebsol.in/wp-content/uploads/2025/07/12.jpg",
+    "description": "Working exclusively at night in a bustling market zone adjacent to Tirupati Temple, PEBSOL completed this high-profile commercial facility in 2.5 months without disrupting pilgrims or daily commerce.",
+    "highlights": [
+      "Successfully managed night-only construction to minimize disruption in a sensitive zone",
+      "Executed in tight site conditions with precise planning and coordination in 2.5 months",
+      "Integrated modular construction techniques for faster column-free commercial assembly",
+      "Delivered a commercial-grade structure built for durability and high customer footfall"
+    ]
+  },
+  {
+    "id": "proj-5",
+    "title": "Ananda Convention & Grand Event Center",
+    "category": "Commercial & Convention Centers",
+    "client": "Ananda Convention Center",
+    "location": "Hyderabad, Telangana",
+    "area": "70,000 sq.ft",
+    "tonnage": "560 MT",
+    "year": "2023",
+    "status": "Completed",
+    "featured": true,
+    "image": "https://pebsol.in/wp-content/uploads/2025/07/9.jpg",
+    "description": "A complete structural solution delivered for a premium convention facility, combining column-free functionality with aesthetic architectural design for large-scale events.",
+    "highlights": [
+      "Designed for high load-bearing capacity to support large gatherings and grand setups",
+      "Architectural wide-span steel framework providing unobstructed interior hall views",
+      "Integrated customized ventilation and thermal insulation for occupant comfort",
+      "Delivered within tight schedule to meet client commercial event launch dates"
+    ]
+  },
+  {
+    "id": "proj-6",
+    "title": "Vivala Amrit Beverage Facility (Parle Agro Bailley)",
+    "category": "PEB & Prefab Buildings",
+    "client": "Parle Agro / Vivala Amrit",
+    "location": "Hyderabad, Telangana",
+    "area": "85,000 sq.ft",
+    "tonnage": "680 MT",
+    "year": "2023",
+    "status": "Completed",
+    "featured": false,
+    "image": "https://pebsol.in/wp-content/uploads/2025/07/VIVALA-AMRIT-PRIVATE-LIMITED-5-scaled.jpg",
+    "description": "A high-performance industrial facility built for Parle Agro’s Bailley beverage division, adhering to food-grade hygienic norms and 24/7 continuous operations.",
+    "highlights": [
+      "Built to meet strict hygienic and operational standards required in the beverage industry",
+      "Layout and design customized for seamless production, bottling, and logistics",
+      "Engineered for long-term performance in demanding 24/7 industrial environments",
+      "Designed to accommodate future capacity expansion as distribution expands"
+    ]
+  },
+  {
+    "id": "proj-7",
+    "title": "Devi AC Convention Hall",
+    "category": "Commercial & Convention Centers",
+    "client": "Devi Function Hall",
+    "location": "Shankarpally, Hyderabad",
+    "area": "70,000 sq.ft",
+    "tonnage": "520 MT",
+    "year": "2023",
+    "status": "Completed",
+    "featured": false,
+    "image": "https://pebsol.in/wp-content/uploads/2025/07/Devi-AC-Convention-Hall-6-scaled.jpg",
+    "description": "Spacious and fully customized multi-purpose convention structure tailored for high-traffic public events, weddings, and exhibitions with aesthetic steel arches.",
+    "highlights": [
+      "Tailored clear-span layout for optimal crowd movement and space utilization",
+      "Premium-grade structural steel ensuring longevity and robust safety",
+      "Integrated design elements for multi-purpose use — weddings, events, exhibitions",
+      "Delivered with rapid turnaround and cost efficiency without compromising aesthetics"
+    ]
+  },
+  {
+    "id": "proj-8",
     "title": "50 MW Utility-Scale Ground-Mount Solar MMS",
     "category": "Solar Mounting Solutions",
     "client": "Renewable Power Corporation",
-    "location": "Bhadla Solar Park, Rajasthan",
+    "location": "Telangana / Rajasthan Solar Corridor",
     "area": "250 Acres (50 MW)",
     "tonnage": "2,400 MT Galv Steel",
     "year": "2024",
     "status": "Completed",
-    "featured": true,
+    "featured": false,
     "image": "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1200",
-    "description": "Engineered fixed-tilt and seasonal tilt Solar Module Mounting Structures (MMS) manufactured with high-strength structural steel and 80-micron hot-dip galvanizing, tested for 175 km/h cyclonic wind resistance.",
+    "description": "Engineered fixed-tilt Solar Module Mounting Structures (MMS) manufactured with high-strength structural steel and 80-micron hot-dip galvanizing, tested for 175 km/h cyclonic winds.",
     "highlights": [
-      "Engineered to withstand extreme 175 km/h desert cyclonic winds",
+      "Engineered to withstand extreme 175 km/h cyclonic winds",
       "80-micron hot-dip galvanizing ensuring 25+ year corrosion protection",
       "Rapid ramming post design enabling concrete-free foundation installation",
       "Full delivery and commissioning completed 2 weeks ahead of target"
     ]
   },
   {
-    "id": "proj-3",
-    "title": "Reliance Retail Urban Commercial Superstore",
-    "category": "Commercial & Convention Centers",
-    "client": "Reliance Retail",
-    "location": "Secunderabad, Telangana",
-    "area": "35,000 sq.ft",
-    "tonnage": "310 MT",
-    "year": "2024",
-    "status": "Completed",
-    "featured": true,
-    "image": "https://images.unsplash.com/photo-1541888946425-d0fbb18615f3?auto=format&fit=crop&q=80&w=1200",
-    "description": "Fast-track PEB commercial retail center executed adjacent to a temple in a high-density urban market under night-only construction constraints without disrupting surrounding commercial traffic.",
-    "highlights": [
-      "Night-shift precision crane assembly adhering to strict noise constraints",
-      "Aesthetic structural glass & composite panel facade integration",
-      "Column-free retail space maximizing customer aisles and shelf layouts",
-      "Zero disruption to temple visitors and surrounding daily commerce"
-    ]
-  },
-  {
-    "id": "proj-4",
+    "id": "proj-9",
     "title": "12 MW Industrial Rooftop Solar on PEB Sheds",
     "category": "Solar Mounting Solutions",
     "client": "Textile & Spinning Mill Consortium",
     "location": "Warangal Mega Textile Park, Telangana",
     "area": "12 MW (90,000 sq.m Roof)",
     "tonnage": "480 MT Aluminum & Steel",
-    "year": "2023",
+    "year": "2024",
     "status": "Completed",
-    "featured": true,
+    "featured": false,
     "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200",
     "description": "Custom non-penetrating solar module mounting system installed on industrial standing seam PEB roofs, protecting roof warranties while generating 18 million units of clean solar electricity annually.",
     "highlights": [
@@ -77,86 +177,6 @@
       "Lightweight aerodynamic aluminum mounting rails minimize dead load",
       "Generates 18 GWh green power annually, cutting carbon emissions by 14,000 tons",
       "Thermal shade effect reduces plant indoor temperature by 3°C"
-    ]
-  },
-  {
-    "id": "proj-5",
-    "title": "Ananda Convention & Event Center",
-    "category": "Commercial & Convention Centers",
-    "client": "Ananda Conventions",
-    "location": "Kompally, Hyderabad",
-    "area": "55,000 sq.ft",
-    "tonnage": "490 MT",
-    "year": "2023",
-    "status": "Completed",
-    "featured": false,
-    "image": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1200",
-    "description": "Aesthetic wide-span steel building featuring a 48m clear span without interior pillars, engineered for luxury banquet, exhibition, and grand event hosting.",
-    "highlights": [
-      "Massive 48m column-free clear span for unobstructed hall visibility",
-      "Acoustically insulated sandwich roof panels preventing rain reverberation",
-      "Grand structural steel portico canopy welcoming VIP arrivals",
-      "Turnkey civil-to-finishing delivered strictly on time"
-    ]
-  },
-  {
-    "id": "proj-6",
-    "title": "Geekay Wires Heavy Manufacturing Facility",
-    "category": "PEB & Prefab Buildings",
-    "client": "Geekay Wires Limited",
-    "location": "Balanagar, Hyderabad",
-    "area": "85,000 sq.ft",
-    "tonnage": "780 MT",
-    "year": "2024",
-    "status": "Completed",
-    "featured": false,
-    "image": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200",
-    "description": "Heavy industrial steel wire drawing and manufacturing shed equipped with 20T overhead crane runways, high-volume automated ridge ventilators, and integrated machinery pits.",
-    "highlights": [
-      "Heavy crane gantry beams engineered for continuous 20T dynamic surge",
-      "Integrated natural daylight polycarbonate panels saving 35% daytime lighting",
-      "Two-storey administrative office mezzanine built into the main frame",
-      "Delivered and commissioned ahead of scheduled timeline"
-    ]
-  },
-  {
-    "id": "proj-7",
-    "title": "Shri Raj Udyog Agro-Processing & Storage Hub",
-    "category": "Industrial Warehouses",
-    "client": "Shri Raj Udyog Pvt Ltd",
-    "location": "Nizamabad, Telangana",
-    "area": "115,000 sq.ft",
-    "tonnage": "920 MT",
-    "year": "2024",
-    "status": "Completed",
-    "featured": false,
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
-    "description": "Large-capacity agro-processing and grain storage warehouse with thermal break insulation, 12m clear height, and solar-ready roof purlins.",
-    "highlights": [
-      "Engineered for heavy bulk agro storage with post-tensioned slab tie-in",
-      "High-durability 25-year galvalume weather protection envelope",
-      "Simultaneous 8-truck covered loading canopy dock system",
-      "Erected and handed over in 90 days"
-    ]
-  },
-  {
-    "id": "proj-8",
-    "title": "Commercial Solar Carport & EV Charging Canopy",
-    "category": "Solar Mounting Solutions",
-    "client": "Tech City Enterprise Park",
-    "location": "HITEC City, Hyderabad",
-    "area": "3.5 MW (650 Car Bays)",
-    "tonnage": "260 MT Structural Steel",
-    "year": "2024",
-    "status": "Ongoing",
-    "featured": false,
-    "image": "https://images.unsplash.com/photo-1558441719-aa34bef57312?auto=format&fit=crop&q=80&w=1200",
-    "description": "Architectural waterproof solar carport structure covering 650 parking bays, providing green solar electricity for the corporate tech campus and direct EV charging stations.",
-    "highlights": [
-      "Concealed rain guttering and cable tray management system",
-      "High-durability hot-dip galvanized steel with polyurethane topcoat",
-      "Powers 40 high-speed EV charging bays directly from solar power",
-      "Clean modern architectural aesthetic complementing modern corporate campus"
     ]
   }
 ]

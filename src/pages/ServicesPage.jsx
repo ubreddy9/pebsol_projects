@@ -13,14 +13,14 @@ import {
 } from 'lucide-react';
 
 export const ServicesPage = () => {
-  const { setIsQuoteOpen } = useData();
+  const { setIsQuoteOpen, settings } = useData();
 
   const services = [
     {
       id: "peb-prefab",
       title: "PEB & Prefab Buildings",
       subtitle: "Rapid, Reliable, and Cost-Effective Industrial Construction",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
+      image: settings?.media?.servicePeb || "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
       description: "Custom-designed Pre-Engineered metal buildings tailored for industrial manufacturing sheds, warehouses, pharmaceutical factories, and logistics terminals. Featuring wide column-free clear spans up to 60 meters, rapid erection, and 100% leak-proof standing seam roofing systems.",
       specs: [
         "Primary Framing: Built-up high-tensile tapered I-sections with automated submerged arc welding",
@@ -35,7 +35,7 @@ export const ServicesPage = () => {
       id: "solar-mms-ground",
       title: "Solar Module Mounting Structures (Ground Mount)",
       subtitle: "Utility-Scale Ground Mount Structures Engineered for 175 km/h Wind Resilience",
-      image: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1200",
+      image: settings?.media?.serviceSolarGround || "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1200",
       description: "High-strength ground-mounted solar structural systems engineered for utility-scale solar parks and commercial solar power plants. Designed for rapid on-site assembly with both ramming post and concrete foundation configurations, delivering unmatched structural rigidity and longevity.",
       specs: [
         "Capacity: Over 700 MW annual manufacturing capacity from Medchal plant",
@@ -50,7 +50,7 @@ export const ServicesPage = () => {
       id: "solar-rooftop",
       title: "Industrial Rooftop Solar Mounting Solutions",
       subtitle: "Non-Penetrating Seam Clamp Mounting for Factory & Warehouse Roofs",
-      image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200",
+      image: settings?.media?.serviceSolarRooftop || "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200",
       description: "Engineered rooftop solar mounting systems designed specifically for industrial standing seam and trapezoidal metal sheet roofs. Non-penetrating clamps attach securely to roof seams without piercing the sheet, ensuring 100% waterproof integrity and preserving building manufacturer warranties.",
       specs: [
         "Leak Protection: 100% non-penetrating mechanical seam clamps with EPDM cushioning",
@@ -65,7 +65,7 @@ export const ServicesPage = () => {
       id: "commercial-convention",
       title: "Commercial & Convention Centers",
       subtitle: "Architectural Steel Structures for Auditoriums, Retail & Event Spaces",
-      image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1200",
+      image: settings?.media?.serviceCommercial || "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1200",
       description: "Grand, column-free steel structural architecture combining modern aesthetic porticos, glass facades, and acoustically insulated sandwich roof panels. Projects such as Ananda Convention Center and Devi Function Hall exemplify our ability to combine functional strength with exquisite visual elegance.",
       specs: [
         "Aesthetic Spans: Massive 45m+ pillar-free banquet hall spans",
@@ -79,7 +79,7 @@ export const ServicesPage = () => {
       id: "solar-carports",
       title: "Solar Carports & EV Fleet Canopies",
       subtitle: "Waterproof Commercial Solar Parking Structures with EV Charging",
-      image: "https://images.unsplash.com/photo-1558441719-aa34bef57312?auto=format&fit=crop&q=80&w=1200",
+      image: settings?.media?.serviceCarport || "https://images.unsplash.com/photo-1558441719-aa34bef57312?auto=format&fit=crop&q=80&w=1200",
       description: "Dual-purpose architectural solar canopies that shade corporate car parks while generating clean renewable electricity. Equipped with integrated waterproof gutters and built-in conduit channels for direct high-speed EV chargers.",
       specs: [
         "Waterproofing: Patented interlocking rubber gaskets and concealed perimeter drainage",
@@ -93,7 +93,7 @@ export const ServicesPage = () => {
       id: "warehouses-logistics",
       title: "Logistics Hubs & Light-Gauge Prefab Housing",
       subtitle: "High-Bay Distribution Terminals & Rapid Modular Steel Housing",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
+      image: settings?.media?.serviceWarehouse || "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
       description: "Heavy logistics distribution centers with automated dock levelers, canopy projections, and FM2 floor load tie-ins, alongside light-gauge steel framed (LGSF) modular housing for fast-track accommodation and site offices.",
       specs: [
         "Internal Clear Height: 10m to 14m under roof hook for high-density pallet racking",

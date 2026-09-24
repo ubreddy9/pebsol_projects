@@ -1,5 +1,6 @@
 import React from 'react';
 import { useData } from '../context/DataContext';
+import { ClientsSection } from '../components/ClientsSection';
 import { 
   Building2, 
   Sun, 
@@ -73,7 +74,7 @@ export const AboutPage = () => {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <img
-                  src="https://images.unsplash.com/photo-1541888946425-d0fbb18615f3?auto=format&fit=crop&q=80&w=1200"
+                  src={settings?.media?.aboutLegacy || "https://images.unsplash.com/photo-1541888946425-d0fbb18615f3?auto=format&fit=crop&q=80&w=1200"}
                   alt="PEBSOL Engineering"
                   className="w-full h-[450px] object-cover"
                 />
@@ -164,6 +165,9 @@ export const AboutPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Enterprise Clients Section */}
+      <ClientsSection showTestimonials={false} />
 
       {/* Callout */}
       <section className="py-14 bg-[#0f2b48] text-white text-center">

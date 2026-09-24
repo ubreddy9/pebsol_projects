@@ -394,7 +394,8 @@ export const api = {
             address: data.address,
             hours: data.hours,
             adminPasscode: data.admin_passcode || data.adminPasscode,
-            stats: data.stats
+            stats: data.stats,
+            media: data.media
           };
         }
       } catch (err) {
@@ -419,6 +420,7 @@ export const api = {
       email: settings.email,
       address: settings.address,
       hours: settings.hours,
+      media: settings.media,
       updated_at: new Date().toISOString()
     };
 
@@ -435,7 +437,8 @@ export const api = {
           phone: data.phone,
           email: data.email,
           address: data.address,
-          hours: data.hours
+          hours: data.hours,
+          media: data.media
         };
       } catch (err) {
         console.error('Supabase updateSettings error:', err.message);

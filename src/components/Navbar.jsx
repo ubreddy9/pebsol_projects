@@ -65,18 +65,6 @@ export const Navbar = () => {
               <MapPin className="w-3.5 h-3.5 text-emerald-600" />
               <span>HITEX / Shilpa Layout, Hyderabad</span>
             </div>
-            <span className="text-slate-300">|</span>
-            <button 
-              onClick={() => handleNav('admin')}
-              className={`flex items-center space-x-1 px-2.5 py-0.5 rounded text-xs transition-colors font-medium ${
-                currentPage === 'admin' 
-                  ? 'bg-emerald-600 text-white font-bold' 
-                  : 'bg-slate-200/80 hover:bg-slate-300 text-slate-700'
-              }`}
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span>{isAdminLoggedIn ? 'Admin Panel (Active)' : 'Admin Login'}</span>
-            </button>
           </div>
 
         </div>
@@ -196,14 +184,7 @@ export const Navbar = () => {
             ))}
             
             <div className="pt-3 border-t border-slate-100 space-y-2">
-              <button
-                onClick={() => handleNav('admin')}
-                className="w-full text-left px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 bg-slate-100 flex items-center space-x-2"
-              >
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>Admin Portal</span>
-              </button>
-              <div className="text-xs text-slate-500 px-3.5 pt-2">
+              <div className="text-xs text-slate-500 px-3.5 pt-1">
                 <p>Call Us: {settings.phone}</p>
                 <p>Email: {settings.email}</p>
               </div>

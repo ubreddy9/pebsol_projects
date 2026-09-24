@@ -27,7 +27,22 @@ export const DataProvider = ({ children }) => {
 
   const [settings, setSettings] = useState(() => {
     const saved = localStorage.getItem('pebsol_settings');
-    return saved ? JSON.parse(saved) : DEFAULT_SETTINGS;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        return {
+          ...DEFAULT_SETTINGS,
+          ...parsed,
+          media: {
+            ...DEFAULT_SETTINGS.media,
+            ...(parsed.media || {})
+          }
+        };
+      } catch (e) {
+        return DEFAULT_SETTINGS;
+      }
+    }
+    return DEFAULT_SETTINGS;
   });
 
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(() => {
@@ -66,8 +81,18 @@ export const DataProvider = ({ children }) => {
 
       const serverSettings = await api.getSettings();
       if (serverSettings) {
-        setSettings(prev => ({ ...prev, ...serverSettings }));
-        localStorage.setItem('pebsol_settings', JSON.stringify({ ...settings, ...serverSettings }));
+        setSettings(prev => {
+          const merged = {
+            ...prev,
+            ...serverSettings,
+            media: {
+              ...(prev.media || {}),
+              ...(serverSettings.media || {})
+            }
+          };
+          localStorage.setItem('pebsol_settings', JSON.stringify(merged));
+          return merged;
+        });
       }
     };
 
