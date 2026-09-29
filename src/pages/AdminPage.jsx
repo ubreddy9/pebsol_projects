@@ -25,6 +25,9 @@ import {
   Calendar, 
   Sun,
   Zap,
+  Globe,
+  Copy,
+  Check,
   Image as ImageIcon 
 } from 'lucide-react';
 
@@ -90,11 +93,23 @@ export const AdminPage = () => {
   // Settings form state
   const [settingsFormData, setSettingsFormData] = useState({
     companyName: settings.companyName || 'PebSol Projects',
+    siteUrl: settings.siteUrl || 'https://pebsolprojects.com',
+    googleSiteVerification: settings.googleSiteVerification || '',
     phone: settings.phone || '+91 98858 61555',
     email: settings.email || 'info@pebsolprojects.com',
     address: settings.address || '',
     hours: settings.hours || 'Mon to Sat: 9:00 AM – 6:30 PM'
   });
+
+  // Copied indicator state for SEO URLs
+  const [copiedKey, setCopiedKey] = useState('');
+  const handleCopy = (text, key) => {
+    if (navigator?.clipboard?.writeText) {
+      navigator.clipboard.writeText(text);
+    }
+    setCopiedKey(key);
+    setTimeout(() => setCopiedKey(''), 2500);
+  };
 
   // Media & Banners state (Hero, About, Services)
   const [mediaFormData, setMediaFormData] = useState({
@@ -116,6 +131,8 @@ export const AdminPage = () => {
     if (settings) {
       setSettingsFormData({
         companyName: settings.companyName || 'PebSol Projects',
+        siteUrl: settings.siteUrl || 'https://pebsolprojects.com',
+        googleSiteVerification: settings.googleSiteVerification || '',
         phone: settings.phone || '+91 98858 61555',
         email: settings.email || 'info@pebsolprojects.com',
         address: settings.address || '',
@@ -269,6 +286,12 @@ export const AdminPage = () => {
   const handleSaveSettings = async (e) => {
     e.preventDefault();
     await updateSettings(settingsFormData);
+    if (typeof document !== 'undefined') {
+      const meta = document.querySelector('meta[name="google-site-verification"]');
+      if (meta && settingsFormData.googleSiteVerification) {
+        meta.setAttribute('content', settingsFormData.googleSiteVerification);
+      }
+    }
   };
 
   // Filtered projects for admin table
@@ -862,19 +885,194 @@ export const AdminPage = () => {
           </div>
         )}
 
-        {/* TAB 4: SETTINGS & BACKUP */}
+        {/* TAB 4: SETTINGS, SEO & CLOUD */}
         {activeTab === 'settings' && (
-          <div className="space-y-8 max-w-2xl">
+          <div className="space-y-8 max-w-4xl">
             
+            {/* GOOGLE SEARCH CONSOLE & SEO READINESS */}
+            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-200 shadow-sm shrink-0">
+                    <Globe className="w-5 h-5 stroke-[2.5]" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 font-['Barlow'] uppercase">
+                      Google Search Console & SEO Readiness
+                    </h3>
+                    <p className="text-xs text-slate-500">
+                      Crawl configuration, sitemaps, and domain indexing setup for pebsolprojects.com
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    <span>Search Engine Ready</span>
+                  </span>
+                  <a
+                    href="https://search.google.com/search-console"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0f2b48] text-white hover:bg-slate-800 transition-colors shadow-sm"
+                  >
+                    <span>Open Search Console</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Quick links for GSC submission */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Sitemap card */}
+                <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-slate-50 transition-colors space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                      XML Sitemap URL
+                    </span>
+                    <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-700">
+                      Submit in GSC
+                    </span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-600 break-all select-all bg-white p-2 rounded border border-slate-200">
+                    {settingsFormData.siteUrl || 'https://pebsolprojects.com'}/sitemap.xml
+                  </p>
+                  <div className="flex items-center space-x-2 pt-1">
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(`${settingsFormData.siteUrl || 'https://pebsolprojects.com'}/sitemap.xml`, 'sitemap')}
+                      className="px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-100 flex items-center space-x-1.5 transition-all shadow-2xs"
+                    >
+                      {copiedKey === 'sitemap' ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          <span className="text-emerald-700">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5 text-slate-500" />
+                          <span>Copy Sitemap URL</span>
+                        </>
+                      )}
+                    </button>
+                    <a
+                      href="/sitemap.xml"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1 transition-all"
+                    >
+                      <span>View File</span>
+                      <ExternalLink className="w-3 h-3 text-slate-400" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Robots.txt card */}
+                <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-slate-50 transition-colors space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                      Robots.txt Direct URL
+                    </span>
+                    <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-700">
+                      Crawler Directive
+                    </span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-600 break-all select-all bg-white p-2 rounded border border-slate-200">
+                    {settingsFormData.siteUrl || 'https://pebsolprojects.com'}/robots.txt
+                  </p>
+                  <div className="flex items-center space-x-2 pt-1">
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(`${settingsFormData.siteUrl || 'https://pebsolprojects.com'}/robots.txt`, 'robots')}
+                      className="px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-100 flex items-center space-x-1.5 transition-all shadow-2xs"
+                    >
+                      {copiedKey === 'robots' ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          <span className="text-emerald-700">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5 text-slate-500" />
+                          <span>Copy Robots URL</span>
+                        </>
+                      )}
+                    </button>
+                    <a
+                      href="/robots.txt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1 transition-all"
+                    >
+                      <span>View File</span>
+                      <ExternalLink className="w-3 h-3 text-slate-400" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Instructions checklist */}
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-2 text-xs text-slate-600">
+                <span className="font-bold text-slate-800 uppercase tracking-wider text-[11px] block">
+                  Quick Google Search Console 3-Step Setup:
+                </span>
+                <ol className="list-decimal list-inside space-y-1.5 leading-relaxed text-slate-700">
+                  <li>
+                    <strong>Verify Ownership:</strong> In Google Search Console, add <span className="font-mono text-emerald-700">pebsolprojects.com</span> (via DNS TXT record in GoDaddy) OR add <span className="font-mono text-emerald-700">https://pebsolprojects.com</span> and paste the HTML verification code in the form below.
+                  </li>
+                  <li>
+                    <strong>Submit Sitemap:</strong> Click <strong>Sitemaps</strong> in the GSC left menu, enter <span className="font-mono bg-white px-1.5 py-0.5 rounded border border-slate-300 font-bold text-slate-800">sitemap.xml</span>, and click <strong>Submit</strong>.
+                  </li>
+                  <li>
+                    <strong>Request Fast Indexing:</strong> In Search Console, paste <span className="font-mono text-emerald-700">https://pebsolprojects.com</span> into the top URL Inspection search bar and click <strong>"Request Indexing"</strong>.
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            {/* PEBSOL PROFILE & CONTACT INFORMATION */}
             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
               <h3 className="text-lg font-bold text-slate-900 font-['Barlow'] uppercase">
-                PEBSOL Profile & Contact Information
+                PEBSOL Profile, Domain & SEO Verification
               </h3>
               <p className="text-xs text-slate-500">
-                These settings update the header, footer, and contact details across the website.
+                These settings update your domain URL, Google verification tag, header, footer, and contact details across the live website.
               </p>
 
               <form onSubmit={handleSaveSettings} className="space-y-4 pt-2">
+                
+                {/* Domain & Verification row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
+                      Live Website Canonical URL
+                    </label>
+                    <input
+                      type="url"
+                      placeholder="https://pebsolprojects.com"
+                      value={settingsFormData.siteUrl}
+                      onChange={(e) => setSettingsFormData({ ...settingsFormData, siteUrl: e.target.value })}
+                      className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-600"
+                    />
+                    <p className="text-[11px] text-slate-400 mt-1">Used in XML sitemaps, canonical tags, and OpenGraph</p>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
+                      Google Search Console Verification Tag
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. google-site-verification code"
+                      value={settingsFormData.googleSiteVerification}
+                      onChange={(e) => setSettingsFormData({ ...settingsFormData, googleSiteVerification: e.target.value })}
+                      className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-600 font-mono text-xs"
+                    />
+                    <p className="text-[11px] text-slate-400 mt-1">From GSC HTML Tag method: content="[paste this code]"</p>
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Company Name</label>
                   <input
@@ -928,10 +1126,10 @@ export const AdminPage = () => {
 
                 <button
                   type="submit"
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2 rounded-lg text-sm transition-all flex items-center space-x-2"
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-all flex items-center space-x-2 shadow-sm"
                 >
                   <Save className="w-4 h-4" />
-                  <span>Save Settings</span>
+                  <span>Save Settings & Sync SEO</span>
                 </button>
               </form>
             </div>
@@ -954,7 +1152,7 @@ export const AdminPage = () => {
                 isSupabaseConfigured() ? 'text-emerald-800' : 'text-amber-800'
               }`}>
                 {isSupabaseConfigured()
-                  ? 'Your website is directly connected to your Supabase PostgreSQL cloud database. All changes to Projects, Team Members, and Settings are synchronized live to pebprojects.com globally via Vercel/Netlify.'
+                  ? 'Your website is directly connected to your Supabase PostgreSQL cloud database. All changes to Projects, Team Members, and Settings are synchronized live to pebsolprojects.com globally via Vercel/Netlify.'
                   : 'To enable full cloud persistence on Vercel or Netlify, run "supabase_schema.sql" in your Supabase SQL Editor and add your VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY environment variables in your Vercel/Netlify project settings.'}
               </p>
               <div className="flex flex-wrap gap-2 pt-1 text-[11px]">

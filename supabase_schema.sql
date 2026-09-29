@@ -64,6 +64,8 @@ CREATE TABLE settings (
   key TEXT PRIMARY KEY DEFAULT 'site_settings',
   company_name TEXT DEFAULT 'PebSol Projects',
   tagline TEXT DEFAULT 'Engineering Progress. Empowering Growth. Prefab. Solar. Infra.',
+  site_url TEXT DEFAULT 'https://pebsolprojects.com',
+  google_site_verification TEXT DEFAULT '',
   phone TEXT DEFAULT '+91 98858 61555',
   email TEXT DEFAULT 'info@pebsolprojects.com',
   sales_email TEXT DEFAULT 'sales@pebsolprojects.com',
@@ -296,11 +298,13 @@ VALUES
 );
 
 -- Seed Settings
-INSERT INTO settings (key, company_name, phone, email, sales_email, address, hours, admin_passcode)
+INSERT INTO settings (key, company_name, site_url, google_site_verification, phone, email, sales_email, address, hours, admin_passcode)
 VALUES
 (
   'site_settings',
   'PebSol Projects',
+  'https://pebsolprojects.com',
+  '',
   '+91 98858 61555',
   'info@pebsolprojects.com',
   'sales@pebsolprojects.com',
@@ -310,6 +314,7 @@ VALUES
 )
 ON CONFLICT (key) DO UPDATE SET
   company_name = EXCLUDED.company_name,
+  site_url = EXCLUDED.site_url,
   phone = EXCLUDED.phone,
   email = EXCLUDED.email,
   address = EXCLUDED.address;

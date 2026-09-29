@@ -388,6 +388,8 @@ export const api = {
           return {
             companyName: data.company_name || data.companyName,
             tagline: data.tagline,
+            siteUrl: data.site_url || data.siteUrl || 'https://pebprojects.com',
+            googleSiteVerification: data.google_site_verification || data.googleSiteVerification || '',
             phone: data.phone,
             email: data.email,
             salesEmail: data.sales_email || data.salesEmail,
@@ -416,6 +418,8 @@ export const api = {
     const payload = {
       key: 'site_settings',
       company_name: settings.companyName,
+      site_url: settings.siteUrl || 'https://pebprojects.com',
+      google_site_verification: settings.googleSiteVerification || '',
       phone: settings.phone,
       email: settings.email,
       address: settings.address,
@@ -434,6 +438,8 @@ export const api = {
         if (error) throw error;
         return {
           companyName: data.company_name,
+          siteUrl: data.site_url,
+          googleSiteVerification: data.google_site_verification,
           phone: data.phone,
           email: data.email,
           address: data.address,

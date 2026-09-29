@@ -1,0 +1,19 @@
+# ==============================================================================
+# Robots.txt for PebSol Projects (https://pebsolprojects.com)
+# Optimized for Google Search Console, Googlebot, Bingbot & Major Search Engines
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /projects
+Allow: /team
+Allow: /contact
+
+# Disallow private admin routes and backend APIs from indexing
+Disallow: /admin
+Disallow: /api/
+
+# Sitemap location for Google Search Console
+Sitemap: https://pebsolprojects.com/sitemap.xml

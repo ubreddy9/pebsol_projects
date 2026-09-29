@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://pebsolprojects.com/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pebsol.in/wp-content/uploads/2025/07/15-2.jpg</image:loc>
+      <image:title>PebSol Projects - Pre-Engineered Buildings &amp; Solar Solutions</image:title>
+      <image:caption>Turnkey Pre-Engineered Building and Solar Module Mounting Solutions</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://pebsolprojects.com/services</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pebsol.in/wp-content/uploads/2025/07/GEEKAY-WIRES-LIMITED-15-scaled.jpg</image:loc>
+      <image:title>PEB and Solar Mounting Structure Services</image:title>
+    </image:image>
+  </url>
+
+  <!-- Projects Delivered Portfolio -->
+  <url>
+    <loc>https://pebsolprojects.com/projects</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pebsol.in/wp-content/uploads/2025/07/15-2.jpg</image:loc>
+      <image:title>Azad Engineering Aerospace Manufacturing Facility (65,000 sq.ft in 48 Days)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pebsol.in/wp-content/uploads/2025/07/SRI-RAJ-IRON-STEEL-PRODUCTS-PRIVATE-LIMITEDjpg-scaled.jpg</image:loc>
+      <image:title>Shri Raj Udyog Integrated Steel Manufacturing Plant (250,000 sq.ft)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pebsol.in/wp-content/uploads/2025/07/GEEKAY-WIRES-LIMITED-15-scaled.jpg</image:loc>
+      <image:title>Geekay Wires Heavy Industrial Wire Plant (95,000 sq.ft)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pebsol.in/wp-content/uploads/2025/07/12.jpg</image:loc>
+      <image:title>Reliance Retail Commercial Hypermarket Tirupati (Night-shift Execution)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pebsol.in/wp-content/uploads/2025/07/9.jpg</image:loc>
+      <image:title>Ananda Convention and Grand Event Center (70,000 sq.ft)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pebsol.in/wp-content/uploads/2025/07/VIVALA-AMRIT-PRIVATE-LIMITED-5-scaled.jpg</image:loc>
+      <image:title>Vivala Amrit Parle Agro Bailley Beverage Facility (85,000 sq.ft)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pebsol.in/wp-content/uploads/2025/07/Devi-AC-Convention-Hall-6-scaled.jpg</image:loc>
+      <image:title>Devi AC Convention Hall Shankarpally (70,000 sq.ft)</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://pebsolprojects.com/about</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Leadership Team -->
+  <url>
+    <loc>https://pebsolprojects.com/team</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Us / Quote Request -->
+  <url>
+    <loc>https://pebsolprojects.com/contact</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

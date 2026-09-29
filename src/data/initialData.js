@@ -245,6 +245,8 @@ export const DEFAULT_MEDIA = {
 export const DEFAULT_SETTINGS = {
   companyName: "PebSol Projects",
   tagline: "Engineering Progress. Empowering Growth. Prefab. Solar. Infra.",
+  siteUrl: "https://pebsolprojects.com",
+  googleSiteVerification: "",
   phone: "+91 98858 61555",
   email: "info@pebsolprojects.com",
   salesEmail: "sales@pebsolprojects.com",

@@ -2,10 +2,34 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { api } from '../services/api';
 import { DEFAULT_PROJECTS, DEFAULT_TEAM, DEFAULT_SETTINGS } from '../data/initialData';
 
+const PAGE_TITLES = {
+  home: "PebSol Projects | Pre-Engineered Buildings & Solar Mounting Solutions",
+  about: "About Us | PebSol Projects - Prefab & Solar Infrastructure",
+  services: "Services | PEB Construction & Solar MMS Solutions | PebSol Projects",
+  projects: "Projects Delivered | Landmark PEB & Solar Projects | PebSol Projects",
+  team: "Engineering Leadership & Team | PebSol Projects",
+  contact: "Contact Us | Get a Quote for PEB & Solar Infra | PebSol Projects",
+  admin: "Admin Portal | PebSol Projects"
+};
+
+const getPageFromUrl = () => {
+  if (typeof window === 'undefined') return 'home';
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+  const validPages = ['home', 'about', 'services', 'projects', 'team', 'contact', 'admin'];
+  if (validPages.includes(path)) return path;
+  return 'home';
+};
+
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState(() => {
+    const initialPage = getPageFromUrl();
+    if (typeof document !== 'undefined' && PAGE_TITLES[initialPage]) {
+      document.title = PAGE_TITLES[initialPage];
+    }
+    return initialPage;
+  });
   const [selectedProject, setSelectedProject] = useState(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   
@@ -30,6 +54,9 @@ export const DataProvider = ({ children }) => {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
+        if (parsed.siteUrl === 'https://pebprojects.com') {
+          parsed.siteUrl = 'https://pebsolprojects.com';
+        }
         return {
           ...DEFAULT_SETTINGS,
           ...parsed,
@@ -116,10 +143,34 @@ export const DataProvider = ({ children }) => {
     localStorage.setItem('pebsol_settings', JSON.stringify(settings));
   }, [settings]);
 
-  // Navigation helper
+  // Synchronize browser history and popstate for Googlebot and user back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const page = getPageFromUrl();
+      setCurrentPage(page);
+      if (PAGE_TITLES[page]) {
+        document.title = PAGE_TITLES[page];
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Navigation helper with clean SEO URLs and dynamic document titles
   const navigateTo = (page, param = null) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (typeof window !== 'undefined') {
+      const targetPath = page === 'home' ? '/' : `/${page}`;
+      if (window.location.pathname !== targetPath) {
+        window.history.pushState({ page }, '', targetPath);
+      }
+      if (PAGE_TITLES[page]) {
+        document.title = PAGE_TITLES[page];
+      }
+    }
+
     if (param && param.projectId) {
       const proj = projects.find(p => p.id === param.projectId);
       if (proj) setSelectedProject(proj);

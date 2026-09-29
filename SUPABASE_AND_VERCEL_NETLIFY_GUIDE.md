@@ -1,10 +1,10 @@
 # Complete Deployment & Supabase Cloud Database Guide
-### PebSol Projects (`pebprojects.com`) — Vercel / Netlify & Supabase
+### PebSol Projects (`pebsolprojects.com`) — Vercel / Netlify & Supabase
 
 This guide walks you step-by-step through:
 1. Setting up **Supabase** (Free cloud PostgreSQL database)
 2. Deploying to **Vercel** or **Netlify** (Free global CDN hosting with automatic HTTPS)
-3. Connecting your custom domain **`pebprojects.com`** from GoDaddy
+3. Connecting your custom domain **`pebsolprojects.com`** from GoDaddy
 
 ---
 
@@ -12,7 +12,7 @@ This guide walks you step-by-step through:
 - **Zero Server Costs**: Both Supabase and Vercel/Netlify have generous perpetual free tiers.
 - **No Node.js Server to Maintain**: The site runs serverless as a lightning-fast Single Page Application (SPA).
 - **Global CDN**: Your website loads in milliseconds anywhere in India and worldwide.
-- **Admin Anywhere**: Any changes you make in the Admin Panel from your laptop or phone save directly to Supabase and update on `pebprojects.com` in real time.
+- **Admin Anywhere**: Any changes you make in the Admin Panel from your laptop or phone save directly to Supabase and update on `pebsolprojects.com` in real time.
 
 ---
 
@@ -73,12 +73,12 @@ This guide walks you step-by-step through:
 
 ---
 
-## 🌐 Step 3: Connect GoDaddy Domain (`pebprojects.com`)
+## 🌐 Step 3: Connect GoDaddy Domain (`pebsolprojects.com`)
 
 ### If using Vercel:
 1. In your Vercel project dashboard, go to **Settings** -> **Domains**.
-2. Enter **`pebprojects.com`** and click **Add**.
-3. Choose the option to also add **`www.pebprojects.com`** (redirect to `pebprojects.com`).
+2. Enter **`pebsolprojects.com`** and click **Add**.
+3. Choose the option to also add **`www.pebsolprojects.com`** (redirect to `pebsolprojects.com`).
 4. Vercel will show you the exact DNS records needed:
    - **A Record**:
      - Name: `@`
@@ -89,7 +89,7 @@ This guide walks you step-by-step through:
 
 ### If using Netlify:
 1. In your Netlify dashboard, go to **Site configuration** -> **Domain management** -> **Add custom domain**.
-2. Enter `pebprojects.com` and click **Verify** -> **Add domain**.
+2. Enter `pebsolprojects.com` and click **Verify** -> **Add domain**.
 3. Netlify will show the DNS records:
    - **A Record**: Name: `@`, Value: `75.2.60.5`
    - **CNAME Record**: Name: `www`, Value: `<your-site-name>.netlify.app`
@@ -98,7 +98,7 @@ This guide walks you step-by-step through:
 
 ### Configure DNS in GoDaddy:
 1. Log in to your **[GoDaddy Account](https://www.godaddy.com)**.
-2. Go to **My Products** -> find `pebprojects.com` -> click **DNS** (or **Manage DNS**).
+2. Go to **My Products** -> find `pebsolprojects.com` -> click **DNS** (or **Manage DNS**).
 3. Under the **DNS Records** table:
    - **Edit or Add the `A` record**:
      - **Type**: `A`
