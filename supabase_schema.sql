@@ -63,13 +63,16 @@ CREATE TABLE inquiries (
 CREATE TABLE settings (
   key TEXT PRIMARY KEY DEFAULT 'site_settings',
   company_name TEXT DEFAULT 'PebSol Projects',
-  tagline TEXT DEFAULT 'Engineering Progress. Empowering Growth. Prefab. Solar. Infra.',
+  managing_director TEXT DEFAULT 'Upender Reddy',
+  tagline TEXT DEFAULT 'Warehousing • Steel Manufacturing • Multi-Storey Steel Buildings',
   site_url TEXT DEFAULT 'https://pebsolprojects.com',
   google_site_verification TEXT DEFAULT '',
-  phone TEXT DEFAULT '+91 98858 61555',
+  phone TEXT DEFAULT '+91 95424 45555',
+  secondary_phone TEXT DEFAULT '+91 87122 07555',
   email TEXT DEFAULT 'info@pebsolprojects.com',
   sales_email TEXT DEFAULT 'sales@pebsolprojects.com',
-  address TEXT DEFAULT '301, 3rd Floor, Cyber Elite suites service apartments, near HITEX EXHIBITION CENTER, Shilpa Layout, Izzathnagar, Hyderabad, Telangana 500084',
+  address TEXT DEFAULT '301, 3rd Floor, Cyber Elite Suites, Service Apartments, near HITEX Exhibition Center, Shilpa Layout, Izzathnagar, Hyderabad, Telangana 500084',
+  factory_address TEXT DEFAULT 'Medak, Telangana',
   hours TEXT DEFAULT 'Mon to Sat: 9:00 AM – 6:30 PM',
   admin_passcode TEXT DEFAULT 'pebsol2025',
   stats JSONB DEFAULT '{"pebAnnualSqFt": "1.2M+ sq.ft", "solarCapacityMW": "700 MW", "manufacturingSqFt": "80,000 sq.ft", "yearsExperience": 15, "globalCountries": "India, Tanzania, Vietnam, Canada"}'::jsonb,
@@ -254,12 +257,12 @@ INSERT INTO team (id, name, role, department, experience, bio, email, linkedin, 
 VALUES
 (
   'team-1',
-  'K. Srinivas Rao',
-  'Managing Director & Founder',
+  'Upender Reddy',
+  'Managing Director',
   'Executive Leadership',
   '16+ Years',
-  'Founded PEBSOL in 2009 in Balanagar. Led strategic expansion into Solar MMS in 2014 and the 80,000 sq.ft Medchal plant, scaling company delivery to 1.2M sq.ft PEB and 700 MW solar capacity annually.',
-  'srinivas@pebsol.in',
+  'Managing Director of PebSol Projects, spearheading end-to-end turnkey solutions across Warehousing, Industrial Steel Manufacturing, and Multi-Storey Steel Buildings throughout India and overseas markets.',
+  'info@pebsolprojects.com',
   'https://linkedin.com',
   'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800'
 ),
@@ -289,32 +292,40 @@ VALUES
   'team-4',
   'Rajeshwar Goud',
   'Head of Manufacturing & Quality Assurance',
-  'Medchal Plant Operations',
+  'Medak Plant Operations',
   '15+ Years',
-  'Oversees the state-of-the-art 80,000 sq.ft manufacturing facility in Medchal. Manages automated welding lines, continuous roll-forming purlin lines, and stringent ISO 9001:2015 quality standards.',
+  'Oversees the state-of-the-art manufacturing facility in Medak, Telangana. Manages automated welding lines, continuous roll-forming purlin lines, and stringent ISO 9001:2015 quality standards.',
   'rajeshwar@pebsol.in',
   'https://linkedin.com',
   'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800'
 );
 
 -- Seed Settings
-INSERT INTO settings (key, company_name, site_url, google_site_verification, phone, email, sales_email, address, hours, admin_passcode)
+INSERT INTO settings (key, company_name, managing_director, tagline, site_url, google_site_verification, phone, secondary_phone, email, sales_email, address, factory_address, hours, admin_passcode)
 VALUES
 (
   'site_settings',
   'PebSol Projects',
+  'Upender Reddy',
+  'Warehousing • Steel Manufacturing • Multi-Storey Steel Buildings',
   'https://pebsolprojects.com',
   '',
-  '+91 98858 61555',
+  '+91 95424 45555',
+  '+91 87122 07555',
   'info@pebsolprojects.com',
   'sales@pebsolprojects.com',
-  '301, 3rd Floor, Cyber Elite suites service apartments, near HITEX EXHIBITION CENTER, Shilpa Layout, Izzathnagar, Hyderabad, Telangana 500084',
+  '301, 3rd Floor, Cyber Elite Suites, Service Apartments, near HITEX Exhibition Center, Shilpa Layout, Izzathnagar, Hyderabad, Telangana 500084',
+  'Medak, Telangana',
   'Mon to Sat: 9:00 AM – 6:30 PM',
   'pebsol2025'
 )
 ON CONFLICT (key) DO UPDATE SET
   company_name = EXCLUDED.company_name,
+  managing_director = EXCLUDED.managing_director,
+  tagline = EXCLUDED.tagline,
   site_url = EXCLUDED.site_url,
   phone = EXCLUDED.phone,
+  secondary_phone = EXCLUDED.secondary_phone,
   email = EXCLUDED.email,
-  address = EXCLUDED.address;
+  address = EXCLUDED.address,
+  factory_address = EXCLUDED.factory_address;

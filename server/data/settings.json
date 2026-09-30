@@ -1,12 +1,15 @@
 {
   "companyName": "PebSol Projects",
-  "tagline": "Engineering Progress. Empowering Growth. Prefab. Solar. Infra.",
+  "managingDirector": "Upender Reddy",
+  "tagline": "Warehousing • Steel Manufacturing • Multi-Storey Steel Buildings",
   "siteUrl": "https://pebsolprojects.com",
   "googleSiteVerification": "",
-  "phone": "+91 98858 61555",
+  "phone": "+91 95424 45555",
+  "secondaryPhone": "+91 87122 07555",
   "email": "info@pebsolprojects.com",
   "salesEmail": "sales@pebsolprojects.com",
-  "address": "301, 3rd Floor, Cyber Elite suites service apartments, near HITEX EXHIBITION CENTER, Shilpa Layout, Izzathnagar, Hyderabad, Telangana 500084",
+  "address": "301, 3rd Floor, Cyber Elite Suites, Service Apartments, near HITEX Exhibition Center, Shilpa Layout, Izzathnagar, Hyderabad, Telangana 500084",
+  "factoryAddress": "Medak, Telangana",
   "hours": "Mon to Sat: 9:00 AM – 6:30 PM",
   "stats": {
     "pebAnnualSqFt": "1.2M+ sq.ft",

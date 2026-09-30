@@ -40,13 +40,22 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           
           <div className="flex items-center space-x-6">
-            <a 
-              href={`tel:${settings.phone.replace(/\s+/g, '')}`} 
-              className="flex items-center space-x-1.5 hover:text-emerald-600 transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-emerald-600" />
-              <span className="font-medium text-slate-700">{settings.phone}</span>
-            </a>
+            <div className="flex items-center space-x-2">
+              <a 
+                href={`tel:${(settings.phone || '+91 95424 45555').replace(/\s+/g, '')}`} 
+                className="flex items-center space-x-1.5 hover:text-emerald-600 transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-600" />
+                <span className="font-medium text-slate-700">{settings.phone || '+91 95424 45555'}</span>
+              </a>
+              <span className="text-slate-300">|</span>
+              <a 
+                href={`tel:${(settings.secondaryPhone || '+91 87122 07555').replace(/\s+/g, '')}`} 
+                className="hover:text-emerald-600 transition-colors font-medium text-slate-700"
+              >
+                {settings.secondaryPhone || '+91 87122 07555'}
+              </a>
+            </div>
             <a 
               href={`mailto:${settings.email}`} 
               className="flex items-center space-x-1.5 hover:text-emerald-600 transition-colors"

@@ -56,7 +56,7 @@ export const AboutPage = () => {
                 Recognizing the potential of this industry, we quickly evolved into delivering complete PEB solutions, investing in advanced automated welding systems to meet growing national demand.
               </p>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                In <strong>2014</strong>, we strategically diversified into the renewable energy sector, introducing Solar Module Mounting Structures (MMS) just as solar adoption accelerated across India. By <strong>2020</strong>, to meet the surge in demand for warehouses and light-gauge steel housing, we inaugurated our <strong>80,000 sq.ft state-of-the-art facility in Medchal</strong>.
+                In <strong>2014</strong>, we strategically diversified into the renewable energy sector, introducing Solar Module Mounting Structures (MMS) just as solar adoption accelerated across India. By <strong>2020</strong>, to meet the surge in demand for warehousing, industrial steel manufacturing, and multi-storey steel infrastructure, we inaugurated our <strong>80,000 sq.ft state-of-the-art manufacturing facility in Medak, Telangana</strong>.
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-2">
@@ -118,9 +118,9 @@ export const AboutPage = () => {
 
             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
               <div className="text-xs font-bold text-emerald-600 font-mono">YEAR 2020</div>
-              <h4 className="text-lg font-bold text-[#0f2b48] font-['Barlow']">80,000 sq.ft Medchal Unit</h4>
+              <h4 className="text-lg font-bold text-[#0f2b48] font-['Barlow']">80,000 sq.ft Medak Unit</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Established world-class mega manufacturing facility in Medchal bringing high-speed welding lines and automated roll forming under one roof.
+                Established world-class mega manufacturing facility in Medak, Telangana bringing high-speed welding lines and automated roll forming under one roof.
               </p>
             </div>
 

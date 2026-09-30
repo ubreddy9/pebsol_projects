@@ -152,22 +152,38 @@ export const Footer = () => {
           {/* Col 4: Contact & Facility */}
           <div>
             <h4 className="text-white text-base font-bold font-['Barlow'] uppercase tracking-wider mb-4 border-l-2 border-emerald-500 pl-3">
-              Plant & Office
+              Office & Factory
             </h4>
             <div className="space-y-3 text-slate-400">
               <div className="flex items-start space-x-2.5">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="text-xs leading-relaxed">{settings.address}</span>
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block">Corporate Office:</span>
+                  <span className="text-xs leading-relaxed">{settings.address}</span>
+                </div>
+              </div>
+              <div className="flex items-start space-x-2.5">
+                <Building2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block">Manufacturing Factory:</span>
+                  <span className="text-xs leading-relaxed">{settings.factoryAddress || 'Medak, Telangana'}</span>
+                </div>
               </div>
               <div className="flex items-center space-x-2.5">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <a href={`tel:${settings.phone.replace(/\s+/g, '')}`} className="hover:text-emerald-400 font-semibold text-white">
-                  {settings.phone}
-                </a>
+                <div className="text-xs font-semibold text-white space-x-2">
+                  <a href={`tel:${(settings.phone || '+91 95424 45555').replace(/\s+/g, '')}`} className="hover:text-emerald-400">
+                    {settings.phone || '+91 95424 45555'}
+                  </a>
+                  <span className="text-slate-500">|</span>
+                  <a href={`tel:${(settings.secondaryPhone || '+91 87122 07555').replace(/\s+/g, '')}`} className="hover:text-emerald-400">
+                    {settings.secondaryPhone || '+91 87122 07555'}
+                  </a>
+                </div>
               </div>
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
-                <a href={`mailto:${settings.email}`} className="hover:text-emerald-400">
+                <a href={`mailto:${settings.email}`} className="hover:text-emerald-400 text-xs">
                   {settings.email}
                 </a>
               </div>

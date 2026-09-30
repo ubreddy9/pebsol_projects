@@ -260,13 +260,13 @@ export const HomePage = () => {
               <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200">
                 <img
                   src={settings?.media?.aboutPlant || "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200"}
-                  alt="PEBSOL Medchal Facility"
+                  alt="PEBSOL Medak Facility"
                   className="w-full h-[440px] object-cover"
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
                   <div>
                     <span className="text-xs font-bold text-emerald-700 uppercase">State-of-the-art Plant</span>
-                    <h4 className="text-base font-bold text-[#0f2b48] font-['Barlow']">Medchal Unit • 80,000 sq.ft</h4>
+                    <h4 className="text-base font-bold text-[#0f2b48] font-['Barlow']">Medak Unit • 80,000 sq.ft</h4>
                   </div>
                   <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded">
                     ISO 9001:2015

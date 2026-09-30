@@ -184,12 +184,12 @@ export const DEFAULT_PROJECTS = [
 export const DEFAULT_TEAM = [
   {
     "id": "team-1",
-    "name": "K. Srinivas Rao",
-    "role": "Managing Director & Founder",
+    "name": "Upender Reddy",
+    "role": "Managing Director",
     "department": "Executive Leadership",
     "experience": "16+ Years",
-    "bio": "Founded PEBSOL in 2009 in Balanagar. Led strategic expansion into Solar MMS in 2014 and the 80,000 sq.ft Medchal plant, scaling company delivery to 1.2M sq.ft PEB and 700 MW solar capacity annually.",
-    "email": "srinivas@pebsol.in",
+    "bio": "Managing Director of PebSol Projects, spearheading end-to-end turnkey solutions across Warehousing, Industrial Steel Manufacturing, and Multi-Storey Steel Buildings throughout India and overseas markets.",
+    "email": "info@pebsolprojects.com",
     "linkedin": "https://linkedin.com",
     "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
   },
@@ -219,9 +219,9 @@ export const DEFAULT_TEAM = [
     "id": "team-4",
     "name": "Rajeshwar Goud",
     "role": "Head of Manufacturing & Quality Assurance",
-    "department": "Medchal Plant Operations",
+    "department": "Medak Plant Operations",
     "experience": "15+ Years",
-    "bio": "Oversees the state-of-the-art 80,000 sq.ft manufacturing facility in Medchal. Manages automated welding lines, continuous roll-forming purlin lines, and stringent ISO 9001:2015 quality standards.",
+    "bio": "Oversees the state-of-the-art manufacturing facility in Medak, Telangana. Manages automated welding lines, continuous roll-forming purlin lines, and stringent ISO 9001:2015 quality standards.",
     "email": "rajeshwar@pebsol.in",
     "linkedin": "https://linkedin.com",
     "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800"
@@ -244,13 +244,16 @@ export const DEFAULT_MEDIA = {
 
 export const DEFAULT_SETTINGS = {
   companyName: "PebSol Projects",
-  tagline: "Engineering Progress. Empowering Growth. Prefab. Solar. Infra.",
+  managingDirector: "Upender Reddy",
+  tagline: "Warehousing • Steel Manufacturing • Multi-Storey Steel Buildings",
   siteUrl: "https://pebsolprojects.com",
   googleSiteVerification: "",
-  phone: "+91 98858 61555",
+  phone: "+91 95424 45555",
+  secondaryPhone: "+91 87122 07555",
   email: "info@pebsolprojects.com",
   salesEmail: "sales@pebsolprojects.com",
-  address: "301, 3rd Floor, Cyber Elite suites service apartments, near HITEX EXHIBITION CENTER, Shilpa Layout, Izzathnagar, Hyderabad, Telangana 500084",
+  address: "301, 3rd Floor, Cyber Elite Suites, Service Apartments, near HITEX Exhibition Center, Shilpa Layout, Izzathnagar, Hyderabad, Telangana 500084",
+  factoryAddress: "Medak, Telangana",
   hours: "Mon to Sat: 9:00 AM – 6:30 PM",
   stats: {
     pebAnnualSqFt: "1.2M+ sq.ft",

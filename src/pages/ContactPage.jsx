@@ -87,55 +87,83 @@ export const ContactPage = () => {
 
               <div className="space-y-3.5">
                 
+                {/* Office Address */}
+                <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 flex items-start space-x-4">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                    <Building2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm font-['Barlow'] uppercase">
+                      Corporate Office
+                    </h4>
+                    <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                      {settings.address}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Factory Address */}
                 <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                     <Factory className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 text-sm font-['Barlow'] uppercase">
-                      Manufacturing Facility & Head Office
+                      Manufacturing Factory
                     </h4>
                     <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
-                      {settings.address}
+                      {settings.factoryAddress || 'Medak, Telangana'}
                     </p>
-                    <p className="text-[11px] text-slate-400 mt-1">Secondary unit: Balanagar, Hyderabad</p>
+                    <p className="text-[11px] text-slate-400 mt-0.5">Heavy steel fabrication, roll-forming & solar MMS production</p>
                   </div>
                 </div>
 
+                {/* Contact Person & Phone */}
                 <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-sm font-['Barlow'] uppercase">
-                      Phone & Technical Sales
-                    </h4>
-                    <p className="text-xs text-slate-600 mt-0.5">
-                      <a href={`tel:${settings.phone.replace(/\s+/g, '')}`} className="font-bold text-slate-900 hover:text-emerald-600">
-                        {settings.phone}
+                    <div className="flex items-center space-x-2">
+                      <h4 className="font-bold text-slate-900 text-sm font-['Barlow'] uppercase">
+                        Upender Reddy
+                      </h4>
+                      <span className="text-[10px] font-bold uppercase bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">
+                        Managing Director
+                      </span>
+                    </div>
+                    <div className="text-xs text-slate-700 font-semibold mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <a href={`tel:${(settings.phone || '+91 95424 45555').replace(/\s+/g, '')}`} className="hover:text-emerald-600 text-slate-900">
+                        {settings.phone || '+91 95424 45555'}
                       </a>
-                    </p>
-                    <p className="text-[11px] text-slate-400">Direct technical desk & tender assistance</p>
+                      <span className="text-slate-300">|</span>
+                      <a href={`tel:${(settings.secondaryPhone || '+91 87122 07555').replace(/\s+/g, '')}`} className="hover:text-emerald-600 text-slate-900">
+                        {settings.secondaryPhone || '+91 87122 07555'}
+                      </a>
+                    </div>
+                    <p className="text-[11px] text-slate-400 mt-1">Direct technical desk & project consultations</p>
                   </div>
                 </div>
 
+                {/* Email */}
                 <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 text-sm font-['Barlow'] uppercase">
-                      Email Inquiries
+                      Official Email
                     </h4>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      General: <a href={`mailto:${settings.email}`} className="text-emerald-700 font-semibold hover:underline">{settings.email}</a>
+                      <a href={`mailto:${settings.email}`} className="text-emerald-700 font-semibold hover:underline">
+                        {settings.email}
+                      </a>
                     </p>
-                    <p className="text-xs text-slate-600">
-                      Tenders: <a href={`mailto:${settings.salesEmail || 'sales@pebsol.in'}`} className="text-emerald-700 font-semibold hover:underline">{settings.salesEmail || 'sales@pebsol.in'}</a>
-                    </p>
+                    <p className="text-[11px] text-slate-400 mt-0.5">Website: pebsolprojects.com</p>
                   </div>
                 </div>
 
+                {/* Working Hours */}
                 <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5" />
