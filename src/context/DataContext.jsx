@@ -33,6 +33,8 @@ export const DataProvider = ({ children }) => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   
+  const DATA_VERSION = 'v2_upender_card';
+
   // Data states initialized from localStorage or defaults
   const [projects, setProjects] = useState(() => {
     const saved = localStorage.getItem('pebsol_projects');
@@ -40,6 +42,12 @@ export const DataProvider = ({ children }) => {
   });
 
   const [team, setTeam] = useState(() => {
+    const version = localStorage.getItem('pebsol_data_version');
+    if (version !== DATA_VERSION) {
+      localStorage.setItem('pebsol_data_version', DATA_VERSION);
+      localStorage.setItem('pebsol_team', JSON.stringify(DEFAULT_TEAM));
+      return DEFAULT_TEAM;
+    }
     const saved = localStorage.getItem('pebsol_team');
     return saved ? JSON.parse(saved) : DEFAULT_TEAM;
   });
@@ -50,6 +58,12 @@ export const DataProvider = ({ children }) => {
   });
 
   const [settings, setSettings] = useState(() => {
+    const version = localStorage.getItem('pebsol_settings_version');
+    if (version !== DATA_VERSION) {
+      localStorage.setItem('pebsol_settings_version', DATA_VERSION);
+      localStorage.setItem('pebsol_settings', JSON.stringify(DEFAULT_SETTINGS));
+      return DEFAULT_SETTINGS;
+    }
     const saved = localStorage.getItem('pebsol_settings');
     if (saved) {
       try {
