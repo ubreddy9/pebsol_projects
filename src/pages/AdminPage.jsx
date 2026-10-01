@@ -116,16 +116,16 @@ export const AdminPage = () => {
 
   // Media & Banners state (Hero, About, Services)
   const [mediaFormData, setMediaFormData] = useState({
-    heroSlide1: settings?.media?.heroSlide1 || "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1920",
+    heroSlide1: settings?.media?.heroSlide1 || "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=1920",
     heroSlide2: settings?.media?.heroSlide2 || "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1920",
     heroSlide3: settings?.media?.heroSlide3 || "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1920",
     aboutPlant: settings?.media?.aboutPlant || "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
-    aboutLegacy: settings?.media?.aboutLegacy || "https://images.unsplash.com/photo-1541888946425-d0fbb18615f3?auto=format&fit=crop&q=80&w=1200",
+    aboutLegacy: settings?.media?.aboutLegacy || "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=1200",
     servicePeb: settings?.media?.servicePeb || "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
-    serviceSolarGround: settings?.media?.serviceSolarGround || "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1200",
+    serviceSolarGround: settings?.media?.serviceSolarGround || "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=1200",
     serviceSolarRooftop: settings?.media?.serviceSolarRooftop || "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200",
-    serviceCommercial: settings?.media?.serviceCommercial || "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1200",
-    serviceCarport: settings?.media?.serviceCarport || "https://images.unsplash.com/photo-1558441719-aa34bef57312?auto=format&fit=crop&q=80&w=1200",
+    serviceCommercial: settings?.media?.serviceCommercial || "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=1200",
+    serviceCarport: settings?.media?.serviceCarport || "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1200",
     serviceWarehouse: settings?.media?.serviceWarehouse || "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200"
   });
 
@@ -164,12 +164,12 @@ export const AdminPage = () => {
   // Solar & PEB presets
   const imagePresets = [
     { label: 'PEB Aerospace Plant', url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200' },
-    { label: 'Ground Mount Solar Farm', url: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1200' },
+    { label: 'Ground Mount Solar Farm', url: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=1200' },
     { label: 'Rooftop Solar on PEB Shed', url: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200' },
-    { label: 'Commercial Retail Steel', url: 'https://images.unsplash.com/photo-1541888946425-d0fbb18615f3?auto=format&fit=crop&q=80&w=1200' },
+    { label: 'Commercial Retail Steel', url: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=1200' },
     { label: 'Convention Hall', url: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1200' },
-    { label: 'Heavy Manufacturing Shed', url: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200' },
-    { label: 'Solar Carport Canopy', url: 'https://images.unsplash.com/photo-1558441719-aa34bef57312?auto=format&fit=crop&q=80&w=1200' },
+    { label: 'Heavy Manufacturing Shed', url: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200' },
+    { label: 'Solar Carport Canopy', url: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1200' },
     { label: 'Logistics Warehouse', url: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200' }
   ];
 

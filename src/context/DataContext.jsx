@@ -57,13 +57,23 @@ export const DataProvider = ({ children }) => {
     return saved ? JSON.parse(saved) : [];
   });
 
-  const [settings, setSettings] = useState(() => {
-    const version = localStorage.getItem('pebsol_settings_version');
-    if (version !== DATA_VERSION) {
-      localStorage.setItem('pebsol_settings_version', DATA_VERSION);
-      localStorage.setItem('pebsol_settings', JSON.stringify(DEFAULT_SETTINGS));
-      return DEFAULT_SETTINGS;
+  const cleanMedia = (media = {}) => {
+    const cleaned = { ...DEFAULT_SETTINGS.media, ...media };
+    const bad404s = [
+      'photo-1509391365360-2e959784a276',
+      'photo-1541888946425-d0fbb18615f3',
+      'photo-1558441719-aa34bef57312',
+      'photo-1504917599217-d4dc5ebe6122'
+    ];
+    for (const [k, v] of Object.entries(cleaned)) {
+      if (typeof v === 'string' && bad404s.some(b => v.includes(b))) {
+        cleaned[k] = DEFAULT_SETTINGS.media[k] || v;
+      }
     }
+    return cleaned;
+  };
+
+  const [settings, setSettings] = useState(() => {
     const saved = localStorage.getItem('pebsol_settings');
     if (saved) {
       try {
@@ -74,10 +84,11 @@ export const DataProvider = ({ children }) => {
         return {
           ...DEFAULT_SETTINGS,
           ...parsed,
-          media: {
-            ...DEFAULT_SETTINGS.media,
-            ...(parsed.media || {})
-          }
+          managingDirector: parsed.managingDirector || DEFAULT_SETTINGS.managingDirector,
+          phone: parsed.phone || DEFAULT_SETTINGS.phone,
+          secondaryPhone: parsed.secondaryPhone || DEFAULT_SETTINGS.secondaryPhone,
+          factoryAddress: parsed.factoryAddress || DEFAULT_SETTINGS.factoryAddress,
+          media: cleanMedia(parsed.media)
         };
       } catch (e) {
         return DEFAULT_SETTINGS;
@@ -200,8 +211,12 @@ export const DataProvider = ({ children }) => {
       status: projectData.status || 'Completed'
     };
     
-    // Update local state immediately (optimistic UI)
-    setProjects(prev => [newProj, ...prev]);
+    // Update local state immediately (optimistic UI) and persist to localStorage
+    setProjects(prev => {
+      const updated = [newProj, ...prev];
+      try { localStorage.setItem('pebsol_projects', JSON.stringify(updated)); } catch (e) {}
+      return updated;
+    });
     showToast('Project created successfully!');
 
     // Sync with backend API
@@ -210,13 +225,21 @@ export const DataProvider = ({ children }) => {
   };
 
   const updateProject = async (id, updatedData) => {
-    setProjects(prev => prev.map(p => (p.id === id ? { ...p, ...updatedData } : p)));
+    setProjects(prev => {
+      const updated = prev.map(p => (p.id === id ? { ...p, ...updatedData } : p));
+      try { localStorage.setItem('pebsol_projects', JSON.stringify(updated)); } catch (e) {}
+      return updated;
+    });
     showToast('Project updated successfully!');
     await api.updateProject(id, updatedData);
   };
 
   const deleteProject = async (id) => {
-    setProjects(prev => prev.filter(p => p.id !== id));
+    setProjects(prev => {
+      const updated = prev.filter(p => p.id !== id);
+      try { localStorage.setItem('pebsol_projects', JSON.stringify(updated)); } catch (e) {}
+      return updated;
+    });
     showToast('Project deleted', 'info');
     await api.deleteProject(id);
   };
@@ -227,20 +250,32 @@ export const DataProvider = ({ children }) => {
       ...memberData,
       id: 'team-' + Date.now()
     };
-    setTeam(prev => [...prev, newMember]);
+    setTeam(prev => {
+      const updated = [...prev, newMember];
+      try { localStorage.setItem('pebsol_team', JSON.stringify(updated)); } catch (e) {}
+      return updated;
+    });
     showToast('Team member added!');
     await api.addTeamMember(newMember);
     return newMember;
   };
 
   const updateTeamMember = async (id, updatedData) => {
-    setTeam(prev => prev.map(m => (m.id === id ? { ...m, ...updatedData } : m)));
+    setTeam(prev => {
+      const updated = prev.map(m => (m.id === id ? { ...m, ...updatedData } : m));
+      try { localStorage.setItem('pebsol_team', JSON.stringify(updated)); } catch (e) {}
+      return updated;
+    });
     showToast('Team member updated!');
     await api.updateTeamMember(id, updatedData);
   };
 
   const deleteTeamMember = async (id) => {
-    setTeam(prev => prev.filter(m => m.id !== id));
+    setTeam(prev => {
+      const updated = prev.filter(m => m.id !== id);
+      try { localStorage.setItem('pebsol_team', JSON.stringify(updated)); } catch (e) {}
+      return updated;
+    });
     showToast('Team member deleted', 'info');
     await api.deleteTeamMember(id);
   };
@@ -253,27 +288,54 @@ export const DataProvider = ({ children }) => {
       status: 'New',
       date: new Date().toISOString()
     };
-    setInquiries(prev => [newInq, ...prev]);
+    setInquiries(prev => {
+      const updated = [newInq, ...prev];
+      try { localStorage.setItem('pebsol_inquiries', JSON.stringify(updated)); } catch (e) {}
+      return updated;
+    });
     showToast('Thank you! Your inquiry has been submitted. Our engineering team will contact you shortly.');
     await api.submitInquiry(newInq);
     return true;
   };
 
   const updateInquiryStatus = async (id, status) => {
-    setInquiries(prev => prev.map(i => (i.id === id ? { ...i, status } : i)));
+    setInquiries(prev => {
+      const updated = prev.map(i => (i.id === id ? { ...i, status } : i));
+      try { localStorage.setItem('pebsol_inquiries', JSON.stringify(updated)); } catch (e) {}
+      return updated;
+    });
     showToast(`Inquiry status updated to ${status}`);
     await api.updateInquiry(id, { status });
   };
 
   const deleteInquiry = async (id) => {
-    setInquiries(prev => prev.filter(i => i.id !== id));
+    setInquiries(prev => {
+      const updated = prev.filter(i => i.id !== id);
+      try { localStorage.setItem('pebsol_inquiries', JSON.stringify(updated)); } catch (e) {}
+      return updated;
+    });
     showToast('Inquiry removed', 'info');
     await api.deleteInquiry(id);
   };
 
   // ================= Settings & Reset =================
   const updateSettingsData = async (newSettings) => {
-    setSettings(prev => ({ ...prev, ...newSettings }));
+    setSettings(prev => {
+      const merged = {
+        ...prev,
+        ...newSettings,
+        media: {
+          ...(prev.media || {}),
+          ...(newSettings.media || {})
+        }
+      };
+      try {
+        localStorage.setItem('pebsol_settings', JSON.stringify(merged));
+      } catch (err) {
+        console.warn('LocalStorage save failed:', err);
+      }
+      return merged;
+    });
     showToast('Settings saved!');
     await api.updateSettings(newSettings);
   };

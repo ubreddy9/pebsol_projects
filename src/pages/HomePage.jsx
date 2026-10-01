@@ -28,7 +28,7 @@ export const HomePage = () => {
       title: "Engineering Progress. Empowering Growth.",
       subtitle: "Prefab. Solar. Infra. Delivered with Precision.",
       desc: "Complete end-to-end solutions under one roof. From structural Tekla design and precision fabrication to on-site commissioning.",
-      image: settings?.media?.heroSlide1 || "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1920",
+      image: settings?.media?.heroSlide1 || "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=1920",
       tag: "PREFAB & SOLAR INFRASTRUCTURE"
     },
     {
@@ -487,13 +487,13 @@ export const HomePage = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
               <span className="text-emerald-700 font-bold uppercase tracking-wider text-xs bg-emerald-100 px-3 py-1 rounded-full">
-                Leadership
+                Executive Leadership
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f2b48] font-['Barlow'] uppercase mt-2">
-                Engineering Leadership Team
+                Executive Leadership & Management
               </h2>
               <p className="text-slate-600 text-sm mt-1">
-                The experts leading PEBSOL's Solar & Prefab Building operations.
+                Visionary managing directors and technical leadership driving PEBSOL's operations.
               </p>
             </div>
             <button

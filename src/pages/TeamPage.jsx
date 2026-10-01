@@ -21,13 +21,13 @@ export const TeamPage = () => {
       <section className="bg-slate-50 border-b border-slate-200 py-16 text-center">
         <div className="max-w-4xl mx-auto px-4 space-y-3">
           <span className="text-emerald-700 font-bold uppercase tracking-wider text-xs bg-emerald-100 px-3 py-1 rounded-full">
-            Engineering Leadership
+            Executive Leadership
           </span>
           <h1 className="text-3xl sm:text-5xl font-black font-['Barlow'] uppercase text-[#0f2b48] tracking-tight">
-            Our Core Team
+            Board & Executive Leadership
           </h1>
           <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            The visionary engineers and operations veterans driving PEBSOL’s leadership in Pre-Engineered Buildings and Solar Module Mounting Solutions.
+            The visionary managing directors, structural architects, and manufacturing heads driving PEBSOL’s leadership in Pre-Engineered Buildings and Solar Module Mounting Solutions.
           </p>
         </div>
       </section>

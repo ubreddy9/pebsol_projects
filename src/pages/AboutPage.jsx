@@ -74,7 +74,7 @@ export const AboutPage = () => {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <img
-                  src={settings?.media?.aboutLegacy || "https://images.unsplash.com/photo-1541888946425-d0fbb18615f3?auto=format&fit=crop&q=80&w=1200"}
+                  src={settings?.media?.aboutLegacy || "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=1200"}
                   alt="PEBSOL Engineering"
                   className="w-full h-[450px] object-cover"
                 />

@@ -150,7 +150,7 @@ export const DEFAULT_PROJECTS = [
     "year": "2024",
     "status": "Completed",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1200",
+    "image": "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=1200",
     "description": "Engineered fixed-tilt Solar Module Mounting Structures (MMS) manufactured with high-strength structural steel and 80-micron hot-dip galvanizing, tested for 175 km/h cyclonic winds.",
     "highlights": [
       "Engineered to withstand extreme 175 km/h cyclonic winds",
@@ -229,16 +229,16 @@ export const DEFAULT_TEAM = [
 ];
 
 export const DEFAULT_MEDIA = {
-  heroSlide1: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1920",
+  heroSlide1: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=1920",
   heroSlide2: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1920",
   heroSlide3: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1920",
   aboutPlant: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
-  aboutLegacy: "https://images.unsplash.com/photo-1541888946425-d0fbb18615f3?auto=format&fit=crop&q=80&w=1200",
+  aboutLegacy: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=1200",
   servicePeb: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
-  serviceSolarGround: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1200",
+  serviceSolarGround: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=1200",
   serviceSolarRooftop: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200",
-  serviceCommercial: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1200",
-  serviceCarport: "https://images.unsplash.com/photo-1558441719-aa34bef57312?auto=format&fit=crop&q=80&w=1200",
+  serviceCommercial: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=1200",
+  serviceCarport: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1200",
   serviceWarehouse: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200"
 };
 

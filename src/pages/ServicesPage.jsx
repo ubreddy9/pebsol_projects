@@ -35,10 +35,10 @@ export const ServicesPage = () => {
       id: "solar-mms-ground",
       title: "Solar Module Mounting Structures (Ground Mount)",
       subtitle: "Utility-Scale Ground Mount Structures Engineered for 175 km/h Wind Resilience",
-      image: settings?.media?.serviceSolarGround || "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1200",
+      image: settings?.media?.serviceSolarGround || "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=1200",
       description: "High-strength ground-mounted solar structural systems engineered for utility-scale solar parks and commercial solar power plants. Designed for rapid on-site assembly with both ramming post and concrete foundation configurations, delivering unmatched structural rigidity and longevity.",
       specs: [
-        "Capacity: Over 700 MW annual manufacturing capacity from Medchal plant",
+        "Capacity: Over 700 MW annual manufacturing capacity from Medak plant",
         "Corrosion Protection: 80-micron minimum hot-dip galvanizing per IS 4759 / ASTM A123",
         "Wind Load Certification: Validated up to 175 km/h cyclonic wind speeds via wind tunnel tests",
         "Configuration: 2x Portrait, 4x Landscape, Fixed Tilt & Seasonal Tilt alignments",
@@ -79,7 +79,7 @@ export const ServicesPage = () => {
       id: "solar-carports",
       title: "Solar Carports & EV Fleet Canopies",
       subtitle: "Waterproof Commercial Solar Parking Structures with EV Charging",
-      image: settings?.media?.serviceCarport || "https://images.unsplash.com/photo-1558441719-aa34bef57312?auto=format&fit=crop&q=80&w=1200",
+      image: settings?.media?.serviceCarport || "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1200",
       description: "Dual-purpose architectural solar canopies that shade corporate car parks while generating clean renewable electricity. Equipped with integrated waterproof gutters and built-in conduit channels for direct high-speed EV chargers.",
       specs: [
         "Waterproofing: Patented interlocking rubber gaskets and concealed perimeter drainage",
