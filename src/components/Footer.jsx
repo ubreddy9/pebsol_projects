@@ -197,8 +197,19 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div className="pt-8 border-t border-slate-800 flex flex-col lg:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© {new Date().getFullYear()} PebSol Projects. All rights reserved. Engineering Progress. Empowering Growth.</p>
+          <p className="text-slate-400">
+            Designed by{' '}
+            <a
+              href="https://instagram.com/immanuels_realm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-300 hover:text-emerald-400 font-medium transition-colors underline decoration-slate-600 hover:decoration-emerald-400 underline-offset-2"
+            >
+              Immanuel
+            </a>
+          </p>
           <div className="flex items-center space-x-6">
             <button onClick={() => navigateTo('about')} className="hover:text-slate-300">Privacy Policy</button>
             <button onClick={() => navigateTo('about')} className="hover:text-slate-300">Terms of Service</button>
